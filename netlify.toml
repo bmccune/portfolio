@@ -2,5 +2,5 @@
   YARN_VERSION = "1.22.15"
   NODE_VERSION = "18.19.0"
 [build]
-  command = "npm run build"
+  command = "npm run build:legacy"
   publish = "public"
