@@ -8,6 +8,8 @@
   Gatsby's default starter
 </h1>
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/64c641be-5210-46b3-9749-a3b0b031a6c3/deploy-status)](https://app.netlify.com/projects/mccune/deploys)
+
 Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
 
 _Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.com/docs/gatsby-starters/)._
