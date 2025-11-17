@@ -4,9 +4,9 @@ const preferDefault = m => (m && m.default) || m
 
 
 exports.components = {
-  "component---src-pages-404-js": preferDefault(require("/Users/bmccune/Git/portfolio/src/pages/404.js")),
-  "component---src-pages-index-js": preferDefault(require("/Users/bmccune/Git/portfolio/src/pages/index.js")),
-  "component---src-pages-page-2-js": preferDefault(require("/Users/bmccune/Git/portfolio/src/pages/page-2.js")),
-  "component---src-pages-using-typescript-tsx": preferDefault(require("/Users/bmccune/Git/portfolio/src/pages/using-typescript.tsx"))
+  "component---src-pages-404-js": preferDefault(require("/Users/bmccune/Documents/GitHub/portfolio/src/pages/404.js")),
+  "component---src-pages-index-js": preferDefault(require("/Users/bmccune/Documents/GitHub/portfolio/src/pages/index.js")),
+  "component---src-pages-page-2-js": preferDefault(require("/Users/bmccune/Documents/GitHub/portfolio/src/pages/page-2.js")),
+  "component---src-pages-using-typescript-tsx": preferDefault(require("/Users/bmccune/Documents/GitHub/portfolio/src/pages/using-typescript.tsx"))
 }
 

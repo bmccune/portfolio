@@ -1,35 +1,82 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
+import "./header.css"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
+const Header = ({ siteTitle }) => {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false)
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+    setIsMenuOpen(false)
+  }
+
+  return (
+    <header className="header">
+      <div className="header-container">
+        <div className="header-brand">
+          <Link to="/" className="brand-link">
+            {siteTitle}
+          </Link>
+        </div>
+        
+        <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
+          <ul className="nav-list">
+            <li>
+              <button 
+                onClick={() => scrollToSection('about')} 
+                className="nav-link"
+              >
+                About
+              </button>
+            </li>
+            <li>
+              <button 
+                onClick={() => scrollToSection('experience')} 
+                className="nav-link"
+              >
+                Experience
+              </button>
+            </li>
+            <li>
+              <button 
+                onClick={() => scrollToSection('skills')} 
+                className="nav-link"
+              >
+                Skills
+              </button>
+            </li>
+            <li>
+              <button 
+                onClick={() => scrollToSection('contact')} 
+                className="nav-link"
+              >
+                Contact
+              </button>
+            </li>
+          </ul>
+        </nav>
+        
+        <button 
+          className="menu-toggle" 
+          onClick={toggleMenu}
+          aria-label="Toggle navigation menu"
         >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+          <span className="hamburger"></span>
+          <span className="hamburger"></span>
+          <span className="hamburger"></span>
+        </button>
+      </div>
+    </header>
+  )
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,

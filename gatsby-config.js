@@ -1,9 +1,12 @@
 module.exports = {
   siteMetadata: {
     title: `Brian McCune`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    description: `Senior technology leader with 15+ years delivering multi-million-dollar programs, cross-functional initiatives, and enterprise software solutions. Program management, software development, and team leadership expertise.`,
+    author: `Brian McCune`,
+    siteUrl: `https://mccune.dev`,
+    email: `brian.mccune@gmail.com`,
+    phone: `(909) 702-2211`,
+    linkedin: `https://www.linkedin.com/in/bmccune`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -20,13 +23,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Brian McCune - Technology Leader`,
+        short_name: `Brian McCune`,
         start_url: `/`,
-        background_color: `#663399`,
-        // This will impact how browsers show your PWA/website
-        // https://css-tricks.com/meta-theme-color-and-trickery/
-        // theme_color: `#663399`,
+        background_color: `#1a202c`,
+        theme_color: `#2d3748`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },

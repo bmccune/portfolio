@@ -26,10 +26,10 @@
   ],
   "license": "0BSD",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
+    "build": "NODE_OPTIONS='--openssl-legacy-provider' gatsby build",
+    "develop": "NODE_OPTIONS='--openssl-legacy-provider' gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "gatsby develop",
+    "start": "NODE_OPTIONS='--openssl-legacy-provider' gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"

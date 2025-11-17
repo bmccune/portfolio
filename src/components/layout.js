@@ -25,23 +25,46 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
+      <Header siteTitle={data.site.siteMetadata?.title || `Brian McCune`} />
+      <div className="layout-wrapper">
+        <main className="main-content">{children}</main>
+        <footer className="footer">
+          <div className="footer-content">
+            <p>
+              © {new Date().getFullYear()} Brian McCune. Built with{" "}
+              <a 
+                href="https://www.gatsbyjs.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Gatsby
+              </a>
+            </p>
+            <div className="footer-links">
+              <a 
+                href="mailto:brian.mccune@gmail.com"
+                aria-label="Email Brian McCune"
+              >
+                Email
+              </a>
+              <a 
+                href="https://www.linkedin.com/in/bmccune" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="LinkedIn Profile"
+              >
+                LinkedIn
+              </a>
+              <a 
+                href="https://mccune.dev" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="Personal Website"
+              >
+                Website
+              </a>
+            </div>
+          </div>
         </footer>
       </div>
     </>
