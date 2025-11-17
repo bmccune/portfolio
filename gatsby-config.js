@@ -29,7 +29,7 @@ module.exports = {
         background_color: `#1a202c`,
         theme_color: `#2d3748`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/icon.svg`, // Simple BM initials icon
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
