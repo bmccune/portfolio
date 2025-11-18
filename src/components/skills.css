@@ -1,6 +1,19 @@
 .skills {
-  padding: 5rem 0;
-  background: #f8f9fa;
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  position: relative;
+}
+
+.skills::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(204, 160, 0, 0.05) 0%, transparent 70%),
+              radial-gradient(circle at 20% 80%, rgba(0, 53, 102, 0.03) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .skills-grid {
@@ -11,17 +24,30 @@
 }
 
 .skill-category {
-  background: white;
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 8, 20, 0.05);
-  transition: all 0.3s ease;
-  border-top: 4px solid #CCA000;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px) saturate(180%);
+  padding: 2.5rem;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0, 8, 20, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-category::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(135deg, #CCA000, #F0CB46);
 }
 
 .skill-category:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 8, 20, 0.1);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(0, 8, 20, 0.12);
 }
 
 .category-header {
@@ -53,22 +79,24 @@
 }
 
 .skill-tag {
-  background: linear-gradient(135deg, #001D3D, #003566);
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 25px;
-  font-size: 0.875rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.8);
+  color: #003566;
+  padding: 0.75rem 1.25rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: default;
-  border: 1px solid transparent;
+  border: 2px solid rgba(0, 53, 102, 0.1);
+  backdrop-filter: blur(10px);
 }
 
 .skill-tag:hover {
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.05);
   background: linear-gradient(135deg, #CCA000, #F0CB46);
-  color: #000814;
-  box-shadow: 0 4px 8px rgba(204, 160, 0, 0.3);
+  color: white;
+  box-shadow: 0 8px 25px rgba(204, 160, 0, 0.3);
+  border-color: transparent;
 }
 
 .skills-summary {

@@ -10,11 +10,12 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background: white;
-  color: #001D3D;
-  line-height: 1.6;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  color: #334155;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
 }
 
 * {
@@ -96,10 +97,12 @@ a:hover {
 
 /* Footer */
 .footer {
-  background: #000814;
+  background: rgba(0, 8, 20, 0.95);
+  backdrop-filter: blur(20px) saturate(180%);
   color: white;
-  padding: 2rem 0;
+  padding: 3rem 0;
   margin-top: auto;
+  border-top: 1px solid rgba(204, 160, 0, 0.2);
 }
 
 .footer-content {
