@@ -41,15 +41,13 @@ const Contact = () => {
       typeof window !== "undefined" &&
       /localhost|127\.0\.0\.1/.test(window.location.hostname)
 
-    if (typeof window !== "undefined" && window.grecaptcha) {
-      const captchaResponse = window.grecaptcha.getResponse()
-      if (!captchaResponse) {
-        setFormState({
-          status: "error",
-          error: "Please complete the reCAPTCHA challenge before sending your message.",
-        })
-        return
-      }
+    const captchaResponse = formData.get("g-recaptcha-response")
+    if (!captchaResponse) {
+      setFormState({
+        status: "error",
+        error: "Please complete the reCAPTCHA challenge before sending your message.",
+      })
+      return
     }
 
     setFormState({ status: "submitting", error: "" })
@@ -75,8 +73,12 @@ const Contact = () => {
       setFormState({ status: "success", error: "" })
       form.reset()
 
-      if (typeof window !== "undefined" && window.grecaptcha) {
-        window.grecaptcha.reset()
+      if (typeof window !== "undefined" && window.grecaptcha?.reset) {
+        try {
+          window.grecaptcha.reset()
+        } catch (resetError) {
+          console.warn("Unable to reset reCAPTCHA", resetError)
+        }
       }
     } catch (error) {
       console.error("Contact form submission failed", error)
