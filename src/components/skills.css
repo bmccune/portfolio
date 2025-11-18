@@ -14,14 +14,14 @@
   background: white;
   padding: 2rem;
   border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 6px rgba(0, 8, 20, 0.05);
   transition: all 0.3s ease;
-  border-top: 4px solid #667eea;
+  border-top: 4px solid #CCA000;
 }
 
 .skill-category:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 25px rgba(0, 8, 20, 0.1);
 }
 
 .category-header {
@@ -33,7 +33,7 @@
 
 .category-icon {
   font-size: 2rem;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #CCA000, #F0CB46);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -42,7 +42,7 @@
 .category-header h3 {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #2d3748;
+  color: #000814;
   margin: 0;
 }
 
@@ -53,7 +53,7 @@
 }
 
 .skill-tag {
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #001D3D, #003566);
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 25px;
@@ -61,17 +61,20 @@
   font-weight: 500;
   transition: all 0.3s ease;
   cursor: default;
+  border: 1px solid transparent;
 }
 
 .skill-tag:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+  background: linear-gradient(135deg, #CCA000, #F0CB46);
+  color: #000814;
+  box-shadow: 0 4px 8px rgba(204, 160, 0, 0.3);
 }
 
 .skills-summary {
   margin-top: 3rem;
   padding-top: 3rem;
-  border-top: 1px solid #e2e8f0;
+  border-top: 1px solid #CCA000;
 }
 
 .summary-stats {
@@ -85,18 +88,20 @@
   padding: 2rem;
   background: white;
   border-radius: 15px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 4px rgba(0, 8, 20, 0.05);
   transition: all 0.3s ease;
+  border: 1px solid rgba(204, 160, 0, 0.2);
 }
 
 .stat-item:hover {
   transform: translateY(-3px);
+  border-color: #CCA000;
 }
 
 .stat-item h4 {
   font-size: 2.5rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #CCA000, #F0CB46);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -105,7 +110,7 @@
 
 .stat-item p {
   font-size: 1rem;
-  color: #718096;
+  color: #003566;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;

@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #000814 0%, #001D3D 50%, #003566 100%);
   color: white;
   text-align: center;
   padding: 2rem;
@@ -49,36 +49,35 @@
   animation: fadeInUp 1s ease 0.8s forwards;
 }
 
-.cta-button {
+.cta-btn {
+  display: inline-block;
   padding: 0.75rem 2rem;
+  border: 2px solid transparent;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
-  border: 2px solid transparent;
 }
 
-.cta-button.primary {
-  background: white;
-  color: #667eea;
-  border-color: white;
-}
-
-.cta-button.primary:hover {
-  background: transparent;
+.cta-primary {
+  background: #CCA000;
   color: white;
-  border-color: white;
+  border-color: #CCA000;
 }
 
-.cta-button.secondary {
-  background: transparent;
+.cta-primary:hover {
+  background: #F0CB46;
+  color: #000814;
+}
+
+.cta-secondary {
   color: white;
-  border-color: white;
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
-.cta-button.secondary:hover {
-  background: white;
-  color: #667eea;
+.cta-secondary:hover {
+  background: #F0CB46;
+  color: #000814;
 }
 
 @keyframes fadeInUp {

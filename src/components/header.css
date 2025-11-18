@@ -3,9 +3,9 @@
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(0, 8, 20, 0.95);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+  border-bottom: 1px solid rgba(204, 160, 0, 0.3);
   z-index: 1000;
   transition: all 0.3s ease;
 }
@@ -26,13 +26,13 @@
 .brand-link {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #2d3748;
+  color: #F0CB46;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .brand-link:hover {
-  color: #667eea;
+  color: #CCA000;
 }
 
 .nav {

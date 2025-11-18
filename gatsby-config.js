@@ -26,8 +26,8 @@ module.exports = {
         name: `Brian McCune - Technology Leader`,
         short_name: `Brian McCune`,
         start_url: `/`,
-        background_color: `#1a202c`,
-        theme_color: `#2d3748`,
+        background_color: `#000814`,
+        theme_color: `#CCA000`,
         display: `minimal-ui`,
         icon: `src/images/icon.svg`, // Simple BM initials icon
       },

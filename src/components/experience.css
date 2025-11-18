@@ -15,7 +15,7 @@
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(to bottom, #667eea, #764ba2);
+  background: linear-gradient(to bottom, #CCA000, #F0CB46);
 }
 
 .timeline-item {
@@ -31,9 +31,9 @@
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #CCA000, #F0CB46);
   border: 4px solid white;
-  box-shadow: 0 0 0 4px #e2e8f0;
+  box-shadow: 0 0 0 4px rgba(204, 160, 0, 0.2);
   z-index: 1;
 }
 
@@ -41,27 +41,27 @@
   background: #f8f9fa;
   padding: 2rem;
   border-radius: 10px;
-  border-left: 4px solid #667eea;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid #CCA000;
+  box-shadow: 0 4px 6px rgba(0, 8, 20, 0.05);
   transition: all 0.3s ease;
 }
 
 .timeline-content:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 25px rgba(0, 8, 20, 0.1);
 }
 
 .experience-header h3 {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #2d3748;
+  color: #000814;
   margin-bottom: 0.5rem;
 }
 
 .experience-header h4 {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #667eea;
+  color: #CCA000;
   margin-bottom: 1rem;
 }
 
@@ -73,7 +73,7 @@
 }
 
 .location {
-  color: #718096;
+  color: #003566;
   font-weight: 500;
 }
 
@@ -83,7 +83,7 @@
 }
 
 .period {
-  color: #718096;
+  color: #003566;
   font-weight: 500;
 }
 
