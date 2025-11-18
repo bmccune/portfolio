@@ -1,32 +1,8 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import "./contact.css"
 
 const Contact = () => {
   const [formState, setFormState] = useState({ status: "idle", error: "" })
-
-  useEffect(() => {
-    if (typeof document === "undefined") {
-      return
-    }
-
-    const existingScript = document.getElementById("netlify-recaptcha")
-    if (existingScript) {
-      return
-    }
-
-    const script = document.createElement("script")
-    script.src = "https://www.google.com/recaptcha/api.js"
-    script.async = true
-    script.defer = true
-    script.id = "netlify-recaptcha"
-    document.body.appendChild(script)
-
-    return () => {
-      if (script.parentNode) {
-        script.parentNode.removeChild(script)
-      }
-    }
-  }, [])
 
   const handleSubmit = async event => {
     event.preventDefault()
@@ -40,15 +16,6 @@ const Contact = () => {
     const isLocal =
       typeof window !== "undefined" &&
       /localhost|127\.0\.0\.1/.test(window.location.hostname)
-
-    const captchaResponse = formData.get("g-recaptcha-response")
-    if (!captchaResponse) {
-      setFormState({
-        status: "error",
-        error: "Please complete the reCAPTCHA challenge before sending your message.",
-      })
-      return
-    }
 
     setFormState({ status: "submitting", error: "" })
 
@@ -72,14 +39,6 @@ const Contact = () => {
 
       setFormState({ status: "success", error: "" })
       form.reset()
-
-      if (typeof window !== "undefined" && window.grecaptcha?.reset) {
-        try {
-          window.grecaptcha.reset()
-        } catch (resetError) {
-          console.warn("Unable to reset reCAPTCHA", resetError)
-        }
-      }
     } catch (error) {
       console.error("Contact form submission failed", error)
       setFormState({
@@ -161,7 +120,6 @@ const Contact = () => {
               method="POST"
               data-netlify="true"
               netlify-honeypot="bot-field"
-              data-netlify-recaptcha="true"
               onSubmit={handleSubmit}
             >
               <input type="hidden" name="form-name" value="contact" />
@@ -215,8 +173,6 @@ const Contact = () => {
                   placeholder="Tell me about your project, needs, or how I can help..."
                 ></textarea>
               </div>
-
-              <div data-netlify-recaptcha="true" className="recaptcha-container" />
               
               <button
                 type="submit"
