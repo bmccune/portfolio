@@ -26,9 +26,7 @@ const About = () => {
               meets strategic business objectives.
             </p>
             <p>
-              Currently, I'm applying my leadership and technical skills in education, 
-              designing curricula and managing project-based learning initiatives while 
-              continuing to mentor the next generation of technology professionals.
+              Currently, I'm applying my leadership and technical skills in education, partnering with school leadership to modernize the technology curriculum, introduce strategic project-based programs, and mentor students and staff in practical, industry-relevant practices.
             </p>
           </div>
           
@@ -57,11 +55,11 @@ const About = () => {
           <div className="education-items">
             <div className="education-item">
               <h4>MS, Information Technology Management</h4>
-              <p>Western Governors University • 2020</p>
+              <p>Western Governors University</p>
             </div>
             <div className="education-item">
               <h4>BS, Interactive Media and Web Design</h4>
-              <p>The Art Institute of California-Orange County • 2008</p>
+              <p>The Art Institute of California-Orange County</p>
             </div>
           </div>
         </div>

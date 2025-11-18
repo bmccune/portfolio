@@ -104,7 +104,7 @@
   background: #f8f9fa;
   padding: 2rem;
   border-radius: 15px;
-  border-top: 4px solid #667eea;
+  border-top: 4px solid #CCA000;
 }
 
 .contact-form h3 {
@@ -121,29 +121,33 @@
 
 .form-group label {
   display: block;
-  font-weight: 600;
-  color: #2d3748;
   margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #000814;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
   width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #e2e8f0;
-  border-radius: 5px;
+  padding: 0.875rem 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
   font-size: 1rem;
-  transition: border-color 0.3s ease;
+  color: #000814;
   background: white;
+  transition: all 0.3s ease;
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  border-color: #CCA000;
+  box-shadow: 0 0 0 3px rgba(204, 160, 0, 0.1);
 }
 
 .form-group textarea {
@@ -157,7 +161,7 @@
 
 .submit-btn {
   width: 100%;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #CCA000, #F0CB46);
   color: white;
   border: none;
   padding: 1rem 2rem;
@@ -175,6 +179,41 @@
 
 .submit-btn:active {
   transform: translateY(0);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.recaptcha-container {
+  margin: 1.5rem 0;
+}
+
+.form-status {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  background: rgba(0, 29, 61, 0.05);
+  color: #001D3D;
+  border: 1px solid rgba(0, 29, 61, 0.08);
+  line-height: 1.5;
+}
+
+.form-status.success {
+  background: rgba(34, 197, 94, 0.12);
+  color: #047857;
+  border-color: rgba(34, 197, 94, 0.35);
+}
+
+.form-status.error {
+  background: rgba(239, 68, 68, 0.12);
+  color: #b91c1c;
+  border-color: rgba(239, 68, 68, 0.35);
 }
 
 .contact-footer {

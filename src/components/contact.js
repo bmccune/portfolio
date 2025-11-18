@@ -1,7 +1,94 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import "./contact.css"
 
 const Contact = () => {
+  const [formState, setFormState] = useState({ status: "idle", error: "" })
+
+  useEffect(() => {
+    if (typeof document === "undefined") {
+      return
+    }
+
+    const existingScript = document.getElementById("netlify-recaptcha")
+    if (existingScript) {
+      return
+    }
+
+    const script = document.createElement("script")
+    script.src = "https://www.google.com/recaptcha/api.js"
+    script.async = true
+    script.defer = true
+    script.id = "netlify-recaptcha"
+    document.body.appendChild(script)
+
+    return () => {
+      if (script.parentNode) {
+        script.parentNode.removeChild(script)
+      }
+    }
+  }, [])
+
+  const handleSubmit = async event => {
+    event.preventDefault()
+
+    if (formState.status === "submitting") {
+      return
+    }
+
+    const form = event.target
+    const formData = new FormData(form)
+    const isLocal =
+      typeof window !== "undefined" &&
+      /localhost|127\.0\.0\.1/.test(window.location.hostname)
+
+    if (typeof window !== "undefined" && window.grecaptcha) {
+      const captchaResponse = window.grecaptcha.getResponse()
+      if (!captchaResponse) {
+        setFormState({
+          status: "error",
+          error: "Please complete the reCAPTCHA challenge before sending your message.",
+        })
+        return
+      }
+    }
+
+    setFormState({ status: "submitting", error: "" })
+
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+      })
+
+      if (!response.ok) {
+        if (isLocal && response.status === 404) {
+          throw new Error(
+            "Local development server cannot process Netlify form submissions. Deploy the site or run `netlify dev` to test the contact form."
+          )
+        }
+
+        const errorText = await response.text()
+        throw new Error(`Network response was not ok: ${response.status} ${errorText}`)
+      }
+
+      setFormState({ status: "success", error: "" })
+      form.reset()
+
+      if (typeof window !== "undefined" && window.grecaptcha) {
+        window.grecaptcha.reset()
+      }
+    } catch (error) {
+      console.error("Contact form submission failed", error)
+      setFormState({
+        status: "error",
+        error:
+          error.message ||
+          "Something went wrong. Please try again or email me directly at brian.mccune@gmail.com.",
+      })
+    }
+  }
+
   return (
     <section id="contact" className="contact">
       <div className="container">
@@ -32,18 +119,6 @@ const Contact = () => {
                 <div className="method-info">
                   <h4>Email</h4>
                   <p>brian.mccune@gmail.com</p>
-                </div>
-              </a>
-              
-              <a 
-                href="tel:+19097022211" 
-                className="contact-method"
-                aria-label="Call Brian McCune"
-              >
-                <div className="method-icon">📞</div>
-                <div className="method-info">
-                  <h4>Phone</h4>
-                  <p>(909) 702-2211</p>
                 </div>
               </a>
               
@@ -79,7 +154,14 @@ const Contact = () => {
           
           <div className="contact-form">
             <h3>Send a Message</h3>
-            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              data-netlify-recaptcha="true"
+              onSubmit={handleSubmit}
+            >
               <input type="hidden" name="form-name" value="contact" />
               <p className="hidden">
                 <label>
@@ -131,10 +213,28 @@ const Contact = () => {
                   placeholder="Tell me about your project, needs, or how I can help..."
                 ></textarea>
               </div>
+
+              <div data-netlify-recaptcha="true" className="recaptcha-container" />
               
-              <button type="submit" className="submit-btn">
-                Send Message
+              <button
+                type="submit"
+                className="submit-btn"
+                disabled={formState.status === "submitting"}
+              >
+                {formState.status === "submitting" ? "Sending..." : "Send Message"}
               </button>
+
+              {formState.status === "success" && (
+                <p className="form-status success" role="status" aria-live="polite">
+                  Thanks for reaching out! I'll get back to you shortly.
+                </p>
+              )}
+
+              {formState.status === "error" && (
+                <p className="form-status error" role="alert" aria-live="assertive">
+                  {formState.error}
+                </p>
+              )}
             </form>
           </div>
         </div>

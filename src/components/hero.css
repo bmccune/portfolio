@@ -3,8 +3,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 20%, #003566 85%, #001D3D 100%);
-  color: #000814;
+  background: linear-gradient(135deg, #000814 0%, #001D3D 25%, #003566 50%, #0F172A 75%, #1E293B 100%);
+  color: white;
   text-align: center;
   padding: 2rem;
   position: relative;
@@ -18,9 +18,29 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 20% 80%, rgba(204, 160, 0, 0.1) 0%, transparent 50%),
-              radial-gradient(circle at 80% 20%, rgba(240, 203, 70, 0.1) 0%, transparent 50%);
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(0, 53, 102, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(0, 29, 61, 0.4) 0%, transparent 60%),
+    radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.2) 0%, transparent 70%);
   pointer-events: none;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-content {
@@ -34,30 +54,28 @@
   margin-bottom: 0.5rem;
   opacity: 0;
   animation: fadeInUp 1s ease 0.2s forwards;
-  background: linear-gradient(135deg, #000814 0%, #003566 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: white;
   letter-spacing: -0.02em;
+  text-shadow: 0 4px 20px rgba(0, 53, 102, 0.5);
 }
 
 .hero-subtitle {
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 300;
   margin-bottom: 1.5rem;
   opacity: 0;
   animation: fadeInUp 1s ease 0.4s forwards;
-  color: #CCA000;
-  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.01em;
 }
 
 .hero-description {
   font-size: 1.125rem;
   line-height: 1.7;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   opacity: 0;
   animation: fadeInUp 1s ease 0.6s forwards;
-  color: #003566;
+  color: rgba(255, 255, 255, 0.8);
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
@@ -75,42 +93,83 @@
 
 .cta-btn {
   display: inline-block;
-  padding: 1rem 2.5rem;
-  border: 2px solid transparent;
-  border-radius: 50px;
+  padding: 0.75rem 4rem;
+  border: 1px solid rgba(204, 160, 0, 0.8);
+  border-radius: 0;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 200;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  overflow: hidden;
-  backdrop-filter: blur(10px);
   font-size: 1rem;
+  margin: 0 0.75rem;
+  background: rgba(0, 53, 102, 0.15);
+  backdrop-filter: blur(10px) saturate(180%);
+  color: #F0CB46;
+  overflow: hidden;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  box-shadow: 
+    0 4px 15px rgba(0, 8, 20, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transform: translateY(0);
+}
+
+.cta-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg,
+    rgba(126, 101, 33, 0.85) 0%,
+    rgba(166, 136, 43, 0.9) 38%,
+    rgba(211, 175, 55, 0.75) 62%,
+    rgba(126, 101, 33, 0.85) 100%);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.cta-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid rgba(240, 203, 70, 0.3);
+  transition: all 0.4s ease;
+  z-index: 3;
+}
+
+.cta-btn:hover::before {
+  right: 0;
+}
+
+.cta-btn:hover::after {
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.cta-btn:hover {
+  color: white;
+  box-shadow: 
+    0 8px 30px rgba(211, 175, 55, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.cta-btn span {
+  position: relative;
+  z-index: 2;
+  font-weight: 200;
 }
 
 .cta-primary {
-  background: linear-gradient(135deg, #CCA000 0%, #F0CB46 100%);
-  color: white;
-  box-shadow: 0 8px 32px rgba(204, 160, 0, 0.3);
-}
-
-.cta-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(204, 160, 0, 0.4);
-  background: linear-gradient(135deg, #F0CB46 0%, #CCA000 100%);
+  /* Inherits all styling from base cta-btn */
 }
 
 .cta-secondary {
-  background: rgba(255, 255, 255, 0.1);
-  color: #003566;
-  border-color: rgba(0, 53, 102, 0.3);
-  backdrop-filter: blur(10px);
-}
-
-.cta-secondary:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: #CCA000;
-  transform: translateY(-2px);
-  color: #001D3D;
+  /* Inherits all styling from base cta-btn */
 }
 
 @keyframes fadeInUp {

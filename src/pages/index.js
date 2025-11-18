@@ -10,10 +10,6 @@ import Contact from "../components/contact"
 
 const IndexPage = () => (
   <Layout>
-    <Seo 
-      title="Brian McCune - Technology Leader" 
-      description="Senior technology leader with 15+ years delivering multi-million-dollar programs, cross-functional initiatives, and enterprise software solutions."
-    />
     <Hero />
     <About />
     <Experience />
@@ -23,3 +19,10 @@ const IndexPage = () => (
 )
 
 export default IndexPage
+
+export const Head = () => (
+  <Seo
+    title="Brian McCune - Technology Leader"
+    description="Senior technology leader with 15+ years delivering multi-million-dollar programs, cross-functional initiatives, and enterprise software solutions."
+  />
+)

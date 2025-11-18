@@ -67,8 +67,8 @@
 }
 
 .nav-link:hover {
-  color: #667eea;
-  background: rgba(102, 126, 234, 0.1);
+  color: #CCA000;
+  background: rgba(204, 160, 0, 0.1);
 }
 
 .menu-toggle {
@@ -84,13 +84,13 @@
 .hamburger {
   width: 24px;
   height: 3px;
-  background: #2d3748;
+  background: #003566;
   transition: all 0.3s ease;
   border-radius: 2px;
 }
 
 .menu-toggle:hover .hamburger {
-  background: #667eea;
+  background: #CCA000;
 }
 
 /* Smooth scroll behavior */

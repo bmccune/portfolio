@@ -5,11 +5,9 @@ module.exports = {
     author: `Brian McCune`,
     siteUrl: `https://mccune.dev`,
     email: `brian.mccune@gmail.com`,
-    phone: `(909) 702-2211`,
     linkedin: `https://www.linkedin.com/in/bmccune`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,

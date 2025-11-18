@@ -10,7 +10,7 @@ const Experience = () => {
       period: "June 2024 - Present",
       highlights: [
         "Designed, implemented, and managed 5+ concurrent curricula aligning 100% with state standards",
-        "Led coordination between 20+ faculty members, increasing teacher productivity by 30%",
+        "Facilitated stakeholder communication with parents, administrators, and support staff improving student outcomes by 15%",
         "Oversaw 15+ project-based learning initiatives for 100+ students using Agile workflows",
         "Improved project quality scores by 20% through data-driven interventions",
         "Mentored 40+ students with 80% achieving real-world client expectations"

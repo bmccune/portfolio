@@ -97,16 +97,17 @@
 .highlight-item h3 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #667eea;
+  color: #CCA000;
   margin-bottom: 0.5rem;
 }
 
 .highlight-item p {
-  font-size: 0.875rem;
-  color: #718096;
+  font-size: 1rem;
+  color: #64748b;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
+  margin: 0;
 }
 
 .education {
