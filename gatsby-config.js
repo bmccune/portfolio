@@ -6,6 +6,13 @@ module.exports = {
     siteUrl: `https://mccune.dev`,
     email: `brian.mccune@gmail.com`,
     linkedin: `https://www.linkedin.com/in/bmccune`,
+    location: `Seattle, Washington`,
+    jobTitle: `Senior Technology Leader`,
+    sameAs: [
+      `https://www.linkedin.com/in/bmccune`,
+      `https://github.com/bmccune`,
+      `https://mccune.dev`,
+    ],
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -28,6 +35,18 @@ module.exports = {
         theme_color: `#CCA000`,
         display: `minimal-ui`,
         icon: `src/images/icon.svg`, // Simple BM initials icon
+      },
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        excludes: [`/dev-404-page/`],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-robots-txt`,
+      options: {
+        policy: [{ userAgent: `*`, allow: `/` }],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

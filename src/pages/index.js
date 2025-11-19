@@ -24,5 +24,6 @@ export const Head = () => (
   <Seo
     title="Brian McCune - Technology Leader"
     description="Senior technology leader with 15+ years delivering multi-million-dollar programs, cross-functional initiatives, and enterprise software solutions."
+    pathname="/"
   />
 )
